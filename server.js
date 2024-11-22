@@ -1,10 +1,14 @@
 const express = require("express");
 const dotenv = require("dotenv");
+const db = require("./config/db");
 const contractRoutes = require("./routes/contract.routes");
 const templateRoutes = require("./routes/template.routes");
 
 // Load environment variables
 dotenv.config();
+
+// Connect to MongoDB
+db();
 
 const app = express();
 const port = process.env.PORT || 3000;
